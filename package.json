@@ -1,0 +1,22 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "Required npm packages for a readme generator that assists developers in creating detailed readme files for their applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Pedigo",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbped/read-me-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbped/read-me-generator/issues"
+  },
+  "homepage": "https://github.com/jbped/read-me-generator#readme"
+}
