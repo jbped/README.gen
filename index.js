@@ -1,10 +1,103 @@
 // Packages needed for this application
 const fs = require("fs");
-const { prompt } = require("inquirer");
-const inquirer = require("inquirer")
+const inquirer = require("inquirer");
+const generateReadMe = require("./src/readme-template.js");
 
-// An array of questions for user input
+const testObj = {
+    userName: 'Jake Pedigo',
+    userGitHub: 'jbped',
+    userEmail: 'testemail@email.com',
+    projectName: 'Test Project',
+    description: 'Test Description',
+    installation: 'Test Install',
+    usage: 'Test Usage',
+    license: 'MIT License',
+    credits: [
+      'Contributors',
+      'Third-Party Assets or Needed Attributions',
+      'Tutorials/Walkthroughs'
+    ],
+    contributors: [
+      {
+        contributorName: 'Some Contributor',
+        contributorGitHub: 'contributor1',
+        addNewContributor: true
+      },
+      {
+        contributorName: 'Another Contributor',
+        contributorGitHub: 'contributor2',
+        addNewContributor: false
+      }
+    ],
+    thirdPartyAssets: [
+      {
+        thirdPartyAssetName: 'TMDB',
+        thirdPartyAssetLink: 'api.tmdb.com',
+        addNewThirdPartyAsset: true
+      },
+      {
+        thirdPartyAssetName: 'Bing Maps',
+        thirdPartyAssetLink: 'bing.com',
+        addNewThirdPartyAsset: false
+      }
+    ],
+    tutorials: [
+      {
+        tutorialName: 'Some Guy',
+        tutoriaLink: 'Youtube.com',
+        addNewTutorial: true
+      },
+      {
+        tutorialName: 'Another Guy',
+        tutoriaLink: 'Some Forum',
+        addNewTutorial: false
+      }
+    ],
+    confirmContributions: false,
+    tests: 'No'
+  }
+
+// An array of required questions for user input
 const reqQuestions = [
+    {
+        type:"input",
+        name:"userName",
+        message:"What is your name? (Required)",
+        validate: nameValidate => {
+            if(nameValidate) {
+                return true;
+            } else {
+                console.log("What is your name?");
+                return false;
+            }
+        }
+    },
+    {
+        type:"input",
+        name:"userGitHub",
+        message:"What is your GitHub username? (Required)",
+        validate: gitHubValidate => {
+            if(gitHubValidate) {
+                return true;
+            } else {
+                console.log("Please provide your GitHub Username.");
+                return false;
+            }
+        }
+    },
+    {
+        type:"input",
+        name:"userEmail",
+        message:"What is an email address that you can be contacted at? (Required)",
+        validate: emailValidate => {
+            if(emailValidate) {
+                return true;
+            } else {
+                console.log("Please provide your Email Address.");
+                return false;
+            }
+        }
+    },
     {
         type: "input",
         name:"projectName",
@@ -13,7 +106,7 @@ const reqQuestions = [
             if(projectNameValidate) {
                 return true;
             } else {
-                console.log("What is the name of your Project.");
+                console.log("What is the name of your Project?");
                 return false;
             }
         }
@@ -76,19 +169,33 @@ const reqQuestions = [
         name:"credits",
         message:"Select all that apply to be included in the Credits Section of the README (Required)",
         choices: ["Contributors", "Third-Party Assets or Needed Attributions", "Tutorials/Walkthroughs"],
-        validate: usageValidate => {
-            if(usageValidate) {
-                return true;
+    }
+];
+
+const secQuestions = [
+    {
+        type:"confirm",
+        name:"confirmContributions",
+        message:"Do you have any specific contribution guidelines or do you wish to use the Contributor Covenant? (Yes for Specific Requirments, No for Contributor Covenant"
+    },
+    {
+        type:"input",
+        name:"contributions",
+        message: "Please specify any contribution guidelines you may have:",
+        when:({confirmContributions}) => {
+            if (confirmContributions) {
+                return true;            
             } else {
-                console.log("Please select at least one item to Credit.");
                 return false;
             }
         }
+    },
+    {
+        type:"input",
+        name:"tests",
+        message:"Provide any tests that were written for this project:"
     }
-
-
-];
-
+]
 const answers = {};
 
 // TODO: Create a function to write README file
@@ -159,41 +266,94 @@ const promptThirdParty = readMeData => {
         },
         {
             type:"confirm",
-            name:"addNewContributor",
+            name:"addNewThirdPartyAsset",
             message:"Would you like to credit another Third-Party Asset?"
         }
     ])
     .then(thirdPartyData => {
         readMeData.thirdPartyAssets.push(thirdPartyData);
-        if(thirdPartyData.addNewContributor){
+        if(thirdPartyData.addNewThirdPartyAsset){
             return promptThirdParty(readMeData);
         }
         return readMeData;
     });
 };
 
-// Function call to initialize app
+const promptTutorials = readMeData => {
+    if(!readMeData.tutorials) {
+        readMeData.tutorials = [];
+    }
+    return inquirer.prompt ([
+        {
+            type:"input",
+            name:"tutorialName",
+            message: "Name of the creator or website that created the tutorial/walkthrough:"
+        },
+        {
+            type:"input",
+            name:"tutoriaLink",
+            message:"Please provide a direct link to the tutorial/walkthrough:"
+        },
+        {
+            type:"confirm",
+            name:"addNewTutorial",
+            message:"Would you like to credit another Tutorial or Walkthrough?"
+        }
+    ])
+    .then(tutorialData => {
+        readMeData.tutorials.push(tutorialData);
+        if(tutorialData.addNewTutorial){
+            return promptTutorials(readMeData);
+        }
+        return readMeData;
+    });
+};
+
+const promptSecondaryQuestions = readMeData => {
+    return inquirer.prompt(secQuestions, answers)
+        .then(secAnswers => {
+            let newReadMe = {
+                ...readMeData,
+                ...secAnswers
+            }
+            return newReadMe
+        })
+}
+
+// Function call to initialize app -- starts with required questions
 init()
     // If user selects to include Contributors in their Credits Section
     .then(data => {
         if (data.credits.includes("Contributors")) {
             console.log("Contains contributors");
-            return promptContributors(data)
+            return promptContributors(data);
         } else {
-            return data
+            return data;
         }
     })    
     // If user selects to include Third-Party Assets in their Credits Section
     .then(data => {
         if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
             console.log("Contains Third-Party Assets or Attribution Requirements");
-            return promptThirdParty(data)
+            return promptThirdParty(data);
         } else {
-            return data
+            return data;
         }
-        console.log("Second Then", data);
     })
     // If user selects to include Tutorials or Walkthroughs in their Credits Section
     .then (data => {
-        console.log("Third Then", data);
+        if (data.credits.includes("Tutorials/Walkthroughs")) {
+            console.log("Contains Tutorials");
+            return promptTutorials(data);
+        } else {
+            return data;
+        }
+    })
+    .then(data => {
+        // console.log("Fourth Then",data)
+        return promptSecondaryQuestions(data)
+    })
+    .then(data =>  {
+        console.log(data);
+        return generateReadMe(testObj);
     })
