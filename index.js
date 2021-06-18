@@ -176,7 +176,8 @@ const secQuestions = [
     {
         type:"confirm",
         name:"confirmContributions",
-        message:"Do you have any specific contribution guidelines or do you wish to use the Contributor Covenant? (Yes for Specific Requirments, No for Contributor Covenant"
+        message:"Do you have any specific contribution guidelines or do you wish to use the Contributor Covenant? (Yes for Specific Requirments, No for Contributor Covenant",
+        default:"false"
     },
     {
         type:"input",
@@ -320,40 +321,49 @@ const promptSecondaryQuestions = readMeData => {
         })
 }
 
+const testInit = testObj => {
+    return new Promise (generateReadMe(testObj)) 
+}
+
 // Function call to initialize app -- starts with required questions
-init()
-    // If user selects to include Contributors in their Credits Section
-    .then(data => {
-        if (data.credits.includes("Contributors")) {
-            console.log("Contains contributors");
-            return promptContributors(data);
-        } else {
-            return data;
-        }
-    })    
-    // If user selects to include Third-Party Assets in their Credits Section
-    .then(data => {
-        if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
-            console.log("Contains Third-Party Assets or Attribution Requirements");
-            return promptThirdParty(data);
-        } else {
-            return data;
-        }
-    })
-    // If user selects to include Tutorials or Walkthroughs in their Credits Section
-    .then (data => {
-        if (data.credits.includes("Tutorials/Walkthroughs")) {
-            console.log("Contains Tutorials");
-            return promptTutorials(data);
-        } else {
-            return data;
-        }
-    })
-    .then(data => {
-        // console.log("Fourth Then",data)
-        return promptSecondaryQuestions(data)
-    })
-    .then(data =>  {
-        console.log(data);
-        return generateReadMe(testObj);
+// init()
+//     // If user selects to include Contributors in their Credits Section
+//     .then(data => {
+//         if (data.credits.includes("Contributors")) {
+//             console.log("Contains contributors");
+//             return promptContributors(data);
+//         } else {
+//             return data;
+//         }
+//     })    
+//     // If user selects to include Third-Party Assets in their Credits Section
+//     .then(data => {
+//         if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
+//             console.log("Contains Third-Party Assets or Attribution Requirements");
+//             return promptThirdParty(data);
+//         } else {
+//             return data;
+//         }
+//     })
+//     // If user selects to include Tutorials or Walkthroughs in their Credits Section
+//     .then (data => {
+//         if (data.credits.includes("Tutorials/Walkthroughs")) {
+//             console.log("Contains Tutorials");
+//             return promptTutorials(data);
+//         } else {
+//             return data;
+//         }
+//     })
+//     .then(data => {
+//         // console.log("Fourth Then",data)
+//         return promptSecondaryQuestions(data)
+//     })
+//     .then(data =>  {
+//         console.log(data);
+//         return generateReadMe(testObj);
+//     })
+
+testInit(testObj)
+    .then(returnedData => {
+        console.log(returnedData)
     })
