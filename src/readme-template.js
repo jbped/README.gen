@@ -7,14 +7,14 @@ return `* [Installation](#installation)
 * [License](#license)
 * [Credits](#credits)
 * [Contributions](#contributions)
-* [Tests](#test)`;
+* [Tests](#tests)`;
     // If there is a credit section
     } else {
 return `* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributions](#contributions)
-* [Tests](#test)`
+* [Tests](#tests)`
     }
 }
 
