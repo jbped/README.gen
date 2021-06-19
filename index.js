@@ -4,14 +4,14 @@ const inquirer = require("inquirer");
 const generateReadMe = require("./src/readme-template.js");
 
 const testObj = {
-    userName: 'Jake Pedigo',
-    userGitHub: 'jbped',
-    userEmail: 'testemail@email.com',
-    projectName: 'Test Project',
-    description: 'Test Description',
-    installation: 'Test Install',
-    usage: 'Test Usage',
-    license: 'MIT License',
+    userName: 'Jake Pedigo',            //required question
+    userGitHub: 'jbped',                //required question
+    userEmail: 'testemail@email.com',   //required question
+    projectName: 'Test Project',        //required question
+    description: 'Test Description',    //required question
+    installation: 'Test Install',       //required question
+    usage: 'Test Usage',                //required question
+    license: 'MIT License',             //required question
     credits: [
       'Contributors',
       'Third-Party Assets or Needed Attributions',
@@ -53,7 +53,7 @@ const testObj = {
         addNewTutorial: false
       }
     ],
-    confirmContributions: false,
+    confirmContributions: false,       //required question
     tests: 'There were tests made'
   }
 
@@ -341,47 +341,45 @@ const testInit = testObj => {
 }
 
 // Function call to initialize app -- starts with required questions
-// init()
-//     // If user selects to include Contributors in their Credits Section
-//     .then(data => {
-//         if (data.credits.includes("Contributors")) {
-//             console.log("Contains contributors");
-//             return promptContributors(data);
-//         } else {
-//             return data;
-//         }
-//     })    
-//     // If user selects to include Third-Party Assets in their Credits Section
-//     .then(data => {
-//         if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
-//             console.log("Contains Third-Party Assets or Attribution Requirements");
-//             return promptThirdParty(data);
-//         } else {
-//             return data;
-//         }
-//     })
-//     // If user selects to include Tutorials or Walkthroughs in their Credits Section
-//     .then (data => {
-//         if (data.credits.includes("Tutorials/Walkthroughs")) {
-//             console.log("Contains Tutorials");
-//             return promptTutorials(data);
-//         } else {
-//             return data;
-//         }
-//     })
-//     .then(data => {
-//         // console.log("Fourth Then",data)
-//         return promptSecondaryQuestions(data)
-//     })
-//     .then(data =>  {
-//         console.log(data);
-//         return generateReadMe(testObj);
-//     })
+init()
+    // If user selects to include Contributors in their Credits Section
+    .then(data => {
+        if (data.credits.includes("Contributors")) {
+            console.log("Contains contributors");
+            return promptContributors(data);
+        } else {
+            return data;
+        }
+    })    
+    // If user selects to include Third-Party Assets in their Credits Section
+    .then(data => {
+        if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
+            console.log("Contains Third-Party Assets or Attribution Requirements");
+            return promptThirdParty(data);
+        } else {
+            return data;
+        }
+    })
+    // If user selects to include Tutorials or Walkthroughs in their Credits Section
+    .then (data => {
+        if (data.credits.includes("Tutorials/Walkthroughs")) {
+            console.log("Contains Tutorials");
+            return promptTutorials(data);
+        } else {
+            return data;
+        }
+    })
+    .then(data => {
+        // console.log("Fourth Then",data)
+        return promptSecondaryQuestions(data)
+    })
+    .then(data =>  {
+        // console.log(data);
+        return generateReadMe(data);
+    })
+    .then(data => {
+        console.log("Creating file... \n Your new README can be found in the dist folder.")
+        return writeToFile(data)
+    });
 
-testInit(testObj);
-    // .then(data => {
-    //   console.log(data)  
-    // })
-    // .then(data => {
-    //     writeToFile(data);
-    // })
+// testInit(testObj);

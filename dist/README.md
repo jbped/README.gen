@@ -1,36 +1,22 @@
 
-# Test Project
+# Test Project Name
 ![MIT License badge](https://img.shields.io/badge/license-MIT_License-green)
 ## Description
-Test Description
+Here is a very detailed explanation of the Test Project Name... It exists.
 
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Credits](#credits)
 * [Contributions](#contributions)
-* [Tests](#test)
+* [Tests](#tests)
 
 ## Installation
-Test Install
+Well, there isn't much to install, but you can give installing something a shot.
 
 ## Usage
-Test Usage
+That may be tricky as there isn't much to use at this time.
 
-## Credits
-### Contributors
-* [Some Contributor](https://github.com/contributor1)
-* [Another Contributor](https://github.com/contributor2)
- 
-### Assets
-* [TMDB](https://www.themoviedb.org/documentation/api)
-* [Bing Maps](https://www.bing.com)
- 
-### Tutorials
-* [Some Guy](https://www.youtube.com)
-* [Another Guy](https://www.reddit.com)
-        
 ## License
 
 MIT License
@@ -46,10 +32,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Contributions
 Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/)
 
-## Tests
-There were tests made
-        
 ## Questions
-For any inquiries regarding Test Project, please contact Jake Pedigo:
+For any inquiries regarding Test Project Name, please contact Jake Pedigo:
 * GitHub: [jbped](https://github.com/jbped)
 * Email: <testemail@email.com>
