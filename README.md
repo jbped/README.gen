@@ -2,7 +2,7 @@
 # README.gen
 ![MIT License badge](https://img.shields.io/badge/license-MIT_License-green)
 ## Description
-README.gen is a command line argument README.md file generator. It's purpose is to assist in the making of quality/professional READMEs with ease through a guided command line questions. An example of a generated README file can be found within the ./dist folder of this repository.
+README.gen is a command line argument README.md file generator. It's purpose is to assist in the making of quality/professional READMEs with ease through guided command line questions. An example of a generated README file can be found within the ./dist folder of this repository.
 
 ## Table of Contents
 * [Installation](#installation)
