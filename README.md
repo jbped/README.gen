@@ -50,7 +50,7 @@ To work the test, open the index.js and:
 - Uncomment the ```testInit(testObj);``` function call
 - Comment out: 
   ``` 
-init()
+  init()
     // If user selects to include Contributors in their Credits Section
     .then(data => {
         if (data.credits.includes("Contributors")) {
