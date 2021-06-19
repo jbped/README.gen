@@ -336,7 +336,7 @@ const promptSecondaryQuestions = readMeData => {
 }
 
 const testInit = testObj => {
-    return writeToFile(generateReadMe(testObj))
+     console.log(generateReadMe(testObj));
 }
 
 // Function call to initialize app -- starts with required questions
@@ -377,7 +377,7 @@ const testInit = testObj => {
 //         return generateReadMe(testObj);
 //     })
 
-testInit(testObj)
+testInit(testObj);
     // .then(data => {
     //   console.log(data)  
     // })

@@ -1,16 +1,14 @@
 //  Need Table of Contents, license, contributors, thirdPartyAssets, tutorials, contributions, tests logic
 const tableContents = readMeData => {
     if (readMeData.credits.length !== 0) {
-        return `
-* [Installation](#installation)
+return `* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Credits](#credits)
 * [Contributions](#contributions)
 * [Tests](#test)`;
     } else {
-        return `
-* [Installation](#installation)
+return `* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributions](#contributions)
@@ -19,7 +17,7 @@ const tableContents = readMeData => {
 }
 
 const licenseLogic = (license, userName) => {
-    if(license === "GNU AGPLv3") {
+    if (license === "GNU AGPLv3") {
         return `
 ${license} License:
 Copyright &copy; ${new Date().getFullYear()} ${userName}
@@ -28,9 +26,8 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
 
-You should have received a copy of the GNU Affero General Public License along with this program.  If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
-        `
-    } else if (license === "GNU GPLv3" || license === "GNU LGPLv3"){
+You should have received a copy of the GNU Affero General Public License along with this program.  If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).`
+    } else if (license === "GNU GPLv3" || license === "GNU LGPLv3") {
         return `
 ${license} License:
 Copyright &copy; ${new Date().getFullYear()} ${userName}
@@ -39,8 +36,7 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with this program.  If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
-        `
+You should have received a copy of the GNU General Public License along with this program.  If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).`
     } else if (license === "Mozilla Public License 2.0") {
         return `
 ${license}:
@@ -48,8 +44,7 @@ Copyright &copy; ${new Date().getFullYear()} ${userName}
 
 Covered Software is provided under this License on an "as is" basis, without warranty of any kind, either expressed, implied, or statutory, including, without limitation, warranties that the Covered Software is free of defects, merchantable, fit for a particular purpose or non-infringing. The entire risk as to the quality and performance of the Covered Software is with You. Should any Covered Software prove defective in any respect, You (not any Contributor) assume the cost of any necessary servicing, repair, or correction. This disclaimer of warranty constitutes an essential part of this License. No use of any Covered Software is authorized under this License except under this disclaimer.
 
-This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/).
-        `
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/).`
     } else if (license === "Apache License 2.0") {
         return `
 ${license}:
@@ -59,8 +54,7 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
     [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-        `
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.`
     } else if (license === "MIT License") {
         return `
 MIT License
@@ -71,8 +65,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        `
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
     } else if (license === "Boost Software License 1.0") {
         return `
 Boost Software License - Version 1.0 - August 17th, 2003
@@ -81,8 +74,7 @@ Permission is hereby granted, free of charge, to any person or organization obta
 
 The copyright notices in the Software and this entire statement, including the above license grant, this restriction and the following disclaimer, must be included in all copies of the Software, in whole or in part, and all derivative works of the Software, unless such copies or derivative works are solely in the form of machine-executable object code generated by a source language processor.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        `
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
     } else {
         return `
 This is free and unencumbered software released into the public domain.
@@ -93,8 +85,7 @@ In jurisdictions that recognize copyright laws, the author or authors of this so
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to [https://unlicense.org](https://unlicense.org)
-        `
+For more information, please refer to [https://unlicense.org](https://unlicense.org)`
     }
 }
 
@@ -110,23 +101,63 @@ ${subCredits(readMeData)}
 }
 
 const subCredits = readMeData => {
-    if (readMeData.contributors){
-        return `
-### Contributors
-${contrLogic(readMeData)}` 
+    const newArr = [];
+
+    if (readMeData.contributors) {
+let contrSect = `### Contributors
+${contrLogic(readMeData)}`
+newArr.push(contrSect)
     }
+    if (readMeData.thirdPartyAssets) {
+let assetsSect = `### Assets
+${assetsLogic(readMeData)}`
+newArr.push(assetsSect)
+    }
+    if (readMeData.tutorials) {
+let tutorialsSect = `### Tutorials
+${tutorialsLogic(readMeData)}`
+newArr.push(tutorialsSect)
+    }
+
+return newArr.join("\n \n")
+    
 }
 
 const contrLogic = readMeData => {
-    for(let i = 0; i < readMeData.contributors.length; i++) {
-`* [${readMeData.contributors.contributorName}](${readMeData.contributors.contributorGitHub})`
-    }
+    const newArr = [];
+    for (let i = 0; i < readMeData.contributors.length; i++) {
+let newTemplateLiteral = 
+`* [${readMeData.contributors[i].contributorName}](${readMeData.contributors[i].contributorGitHub})`
+        console.log("TempLit", newTemplateLiteral)
+        newArr.push(newTemplateLiteral)
+    }   
+    return newArr.join("\n");
+}
+
+const assetsLogic = readMeData => {
+    const newArr = [];
+    for (let i = 0; i < readMeData.thirdPartyAssets.length; i++) {
+let newTemplateLiteral = 
+`* [${readMeData.thirdPartyAssets[i].thirdPartyAssetName}](${readMeData.thirdPartyAssets[i].thirdPartyAssetLink})`
+        console.log("TempLit", newTemplateLiteral)
+        newArr.push(newTemplateLiteral)
+    }   
+    return newArr.join("\n");
+}
+const tutorialsLogic = readMeData => {
+    const newArr = [];
+    for (let i = 0; i < readMeData.tutorials.length; i++) {
+let newTemplateLiteral = 
+`* [${readMeData.tutorials[i].tutorialName}](${readMeData.tutorials[i].tutoriaLink})`
+        console.log("TempLit", newTemplateLiteral)
+        newArr.push(newTemplateLiteral)
+    }   
+    return newArr.join("\n");
 }
 
 const contributionLogic = (confirmContributions, contributions) => {
     if (!confirmContributions) {
-return `Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/)
-        `
+        return `Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/)`
     } else {
         return `${contributions}`
     }
@@ -143,7 +174,7 @@ ${tests}
     }
 }
 module.exports = readMeData => {
-    const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, contributors, thirdPartyAssets, tutorials, confirmContributions, contributions, tests} = readMeData;
+    const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, contributors, thirdPartyAssets, tutorials, confirmContributions, contributions, tests } = readMeData;
     return `
 # ${projectName}
 
@@ -158,17 +189,16 @@ ${installation}
 
 ## Usage
 ${usage}
-
+${creditsLogic(credits, readMeData)}
 ## License
 ${licenseLogic(license, userName)}
 
 ## Contributions
-${contributionLogic(confirmContributions,contributions)}
+${contributionLogic(confirmContributions, contributions)}
 ${testLogic(tests)}
 ## Questions
 For any inquiries regarding ${projectName}, please contact ${userName}:
 * GitHub: [${userGitHub}](https://github.com/${userGitHub})
 * Email: <${userEmail}>
-    `
-} 
-// ${creditsLogic(credits, readMeData)}
+`
+}
