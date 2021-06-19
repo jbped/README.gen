@@ -190,7 +190,7 @@ module.exports = readMeData => {
     const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, confirmContributions, contributions, tests } = readMeData;
     return `
 # ${projectName}
-[!${license} badge](https://img.shields.io/badge/license-${license.split(" ").join("_")}-green)
+![${license} badge](https://img.shields.io/badge/license-${license.split(" ").join("_")}-green)
 ## Description
 ${description}
 
