@@ -1,6 +1,6 @@
 
 # Test Project
-
+[!MIT License badge](https://img.shields.io/badge/license-MIT_License-green)
 ## Description
 Test Description
 
@@ -18,6 +18,19 @@ Test Install
 ## Usage
 Test Usage
 
+## Credits
+### Contributors
+* [Some Contributor](https://github.com/contributor1)
+* [Another Contributor](https://github.com/contributor2)
+ 
+### Assets
+* [TMDB](api.tmdb.com)
+* [Bing Maps](bing.com)
+ 
+### Tutorials
+* [Some Guy](Youtube.com)
+* [Another Guy](Some Forum)
+        
 ## License
 
 MIT License
@@ -40,4 +53,3 @@ There were tests made
 For any inquiries regarding Test Project, please contact Jake Pedigo:
 * GitHub: [jbped](https://github.com/jbped)
 * Email: <testemail@email.com>
-    

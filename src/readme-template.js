@@ -134,7 +134,7 @@ const contrLogic = readMeData => {
     for (let i = 0; i < readMeData.contributors.length; i++) {
 let newTemplateLiteral = 
 `* [${readMeData.contributors[i].contributorName}](https://github.com/${readMeData.contributors[i].contributorGitHub})`
-        console.log("TempLit", newTemplateLiteral)
+        // console.log("TempLit", newTemplateLiteral)
         newArr.push(newTemplateLiteral)
     }   
     return newArr.join("\n");
@@ -146,7 +146,7 @@ const assetsLogic = readMeData => {
     for (let i = 0; i < readMeData.thirdPartyAssets.length; i++) {
 let newTemplateLiteral = 
 `* [${readMeData.thirdPartyAssets[i].thirdPartyAssetName}](${readMeData.thirdPartyAssets[i].thirdPartyAssetLink})`
-        console.log("TempLit", newTemplateLiteral)
+        // console.log("TempLit", newTemplateLiteral)
         newArr.push(newTemplateLiteral)
     }   
     return newArr.join("\n");
@@ -158,7 +158,7 @@ const tutorialsLogic = readMeData => {
     for (let i = 0; i < readMeData.tutorials.length; i++) {
 let newTemplateLiteral = 
 `* [${readMeData.tutorials[i].tutorialName}](${readMeData.tutorials[i].tutoriaLink})`
-        console.log("TempLit", newTemplateLiteral)
+        // console.log("TemdpLit", newTemplateLiteral)
         newArr.push(newTemplateLiteral)
     }   
     return newArr.join("\n");
@@ -190,7 +190,7 @@ module.exports = readMeData => {
     const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, confirmContributions, contributions, tests } = readMeData;
     return `
 # ${projectName}
-
+[!${license} badge](https://img.shields.io/badge/license-${license.split(" ").join("_")}-green)
 ## Description
 ${description}
 
