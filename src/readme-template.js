@@ -1,5 +1,6 @@
-//  Need Table of Contents, license, contributors, thirdPartyAssets, tutorials, contributions, tests logic
+// Generates appropriate Table of Contents depending on provided information.
 const tableContents = readMeData => {
+    // Table of contents if there is no credit section
     if (readMeData.credits.length !== 0) {
 return `* [Installation](#installation)
 * [Usage](#usage)
@@ -7,6 +8,7 @@ return `* [Installation](#installation)
 * [Credits](#credits)
 * [Contributions](#contributions)
 * [Tests](#test)`;
+    // If there is a credit section
     } else {
 return `* [Installation](#installation)
 * [Usage](#usage)
@@ -16,6 +18,7 @@ return `* [Installation](#installation)
     }
 }
 
+// Generates License information dependent on the response
 const licenseLogic = (license, userName) => {
     if (license === "GNU AGPLv3") {
         return `
@@ -89,6 +92,7 @@ For more information, please refer to [https://unlicense.org](https://unlicense.
     }
 }
 
+// Determines if a Credits section needs to be added to the Readme, if true sends passed through README data to the subCredits logic
 const creditsLogic = (credits, readMeData) => {
     if (credits.length === 0) {
         return ``;
@@ -100,6 +104,7 @@ ${subCredits(readMeData)}
     }
 }
 
+// Verifies which subsections of the Credits section need to be added. IF the section is determined to be added then the appropriate subsection logic is called to acquire the content that will be displayed.
 const subCredits = readMeData => {
     const newArr = [];
 
@@ -123,17 +128,19 @@ return newArr.join("\n \n")
     
 }
 
+// Contributors Credit SubSection Logic
 const contrLogic = readMeData => {
     const newArr = [];
     for (let i = 0; i < readMeData.contributors.length; i++) {
 let newTemplateLiteral = 
-`* [${readMeData.contributors[i].contributorName}](${readMeData.contributors[i].contributorGitHub})`
+`* [${readMeData.contributors[i].contributorName}](https://github.com/${readMeData.contributors[i].contributorGitHub})`
         console.log("TempLit", newTemplateLiteral)
         newArr.push(newTemplateLiteral)
     }   
     return newArr.join("\n");
 }
 
+// Third-Party Assets and Resources Credit SubSection Logic
 const assetsLogic = readMeData => {
     const newArr = [];
     for (let i = 0; i < readMeData.thirdPartyAssets.length; i++) {
@@ -144,6 +151,8 @@ let newTemplateLiteral =
     }   
     return newArr.join("\n");
 }
+
+// Tutorials Credit SubSection Logic
 const tutorialsLogic = readMeData => {
     const newArr = [];
     for (let i = 0; i < readMeData.tutorials.length; i++) {
@@ -155,6 +164,7 @@ let newTemplateLiteral =
     return newArr.join("\n");
 }
 
+// Selects the appropriate response for the Contribution section. IF confirmContributions === false, provide  Contributor Covenant.
 const contributionLogic = (confirmContributions, contributions) => {
     if (!confirmContributions) {
         return `Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/)`
@@ -163,6 +173,7 @@ const contributionLogic = (confirmContributions, contributions) => {
     }
 }
 
+// If no information for tests was provided return blank.
 const testLogic = tests => {
     if (tests === "") {
         return ``
@@ -173,8 +184,10 @@ ${tests}
         `
     }
 }
+
+// README Template
 module.exports = readMeData => {
-    const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, contributors, thirdPartyAssets, tutorials, confirmContributions, contributions, tests } = readMeData;
+    const { userName, userGitHub, userEmail, projectName, description, installation, usage, license, credits, confirmContributions, contributions, tests } = readMeData;
     return `
 # ${projectName}
 
