@@ -32,24 +32,24 @@ const testObj = {
     thirdPartyAssets: [
       {
         thirdPartyAssetName: 'TMDB',
-        thirdPartyAssetLink: 'api.tmdb.com',
+        thirdPartyAssetLink: 'https://www.themoviedb.org/documentation/api',
         addNewThirdPartyAsset: true
       },
       {
         thirdPartyAssetName: 'Bing Maps',
-        thirdPartyAssetLink: 'bing.com',
+        thirdPartyAssetLink: 'https://www.bing.com',
         addNewThirdPartyAsset: false
       }
     ],
     tutorials: [
       {
         tutorialName: 'Some Guy',
-        tutoriaLink: 'Youtube.com',
+        tutoriaLink: 'https://www.youtube.com',
         addNewTutorial: true
       },
       {
         tutorialName: 'Another Guy',
-        tutoriaLink: 'Some Forum',
+        tutoriaLink: 'https://www.reddit.com',
         addNewTutorial: false
       }
     ],
@@ -202,14 +202,14 @@ const answers = {};
 // TODO: Create a function to write README file
 const writeToFile = data => {
     return new Promise ((resolve, reject) => {
-        fs.writeFile("./README.md", data, err => {
+        fs.writeFile("./dist/README.md", data, err => {
             if (err) {
                 reject(err)
                 return;
             }
             resolve({
                 ok:true,
-                message:"Creating file..."
+                message:"Creating file... \n Your new README can be found in the dist folder."
             })
         })
     }) 
@@ -277,7 +277,7 @@ const promptThirdParty = readMeData => {
         {
             type:"input",
             name:"thirdPartyAssetLink",
-            message:"Please provide a link to the resource's website:"
+            message:"Please provide a direct link to the resource's website:"
         },
         {
             type:"confirm",

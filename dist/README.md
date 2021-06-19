@@ -24,12 +24,12 @@ Test Usage
 * [Another Contributor](https://github.com/contributor2)
  
 ### Assets
-* [TMDB](api.tmdb.com)
-* [Bing Maps](bing.com)
+* [TMDB](https://www.themoviedb.org/documentation/api)
+* [Bing Maps](https://www.bing.com)
  
 ### Tutorials
-* [Some Guy](Youtube.com)
-* [Another Guy](Some Forum)
+* [Some Guy](https://www.youtube.com)
+* [Another Guy](https://www.reddit.com)
         
 ## License
 
