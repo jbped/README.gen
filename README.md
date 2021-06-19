@@ -144,6 +144,6 @@ To work the test, open the index.js and:
   }
         
 ## Questions
-For any inquiries regarding Test Project, please contact Jake Pedigo via:
+For any inquiries regarding README.gen, please contact Jake Pedigo via:
 * GitHub: [jbped](https://github.com/jbped)
 * Email: <pedigojacob@gmail.com>
