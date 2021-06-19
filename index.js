@@ -54,7 +54,7 @@ const testObj = {
       }
     ],
     confirmContributions: false,
-    tests: 'No'
+    tests: 'There were tests made'
   }
 
 // An array of required questions for user input
@@ -200,7 +200,21 @@ const secQuestions = [
 const answers = {};
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = data => {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile("./README.md", data, err => {
+            if (err) {
+                reject(err)
+                return;
+            }
+            resolve({
+                ok:true,
+                message:"Creating file..."
+            })
+        })
+    }) 
+}
+
 
 // TODO: Create a function to initialize app
 function init() {
@@ -322,7 +336,7 @@ const promptSecondaryQuestions = readMeData => {
 }
 
 const testInit = testObj => {
-    return new Promise (generateReadMe(testObj)) 
+    return writeToFile(generateReadMe(testObj))
 }
 
 // Function call to initialize app -- starts with required questions
@@ -364,6 +378,9 @@ const testInit = testObj => {
 //     })
 
 testInit(testObj)
-    .then(returnedData => {
-        console.log(returnedData)
-    })
+    // .then(data => {
+    //   console.log(data)  
+    // })
+    // .then(data => {
+    //     writeToFile(data);
+    // })
