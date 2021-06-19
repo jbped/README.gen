@@ -50,7 +50,7 @@ To work the test, open the index.js and:
 - Uncomment the ```testInit(testObj);``` function call
 - Comment out: 
   ``` 
-  init()
+init()
     // If user selects to include Contributors in their Credits Section
     .then(data => {
         if (data.credits.includes("Contributors")) {
@@ -83,9 +83,13 @@ To work the test, open the index.js and:
         return promptSecondaryQuestions(data)
     })
     .then(data =>  {
-        console.log(data);
-        return generateReadMe(testObj);
-    }) 
+        // console.log(data);
+        return generateReadMe(data);
+    })
+    .then(data => {
+        console.log("Creating file... \n Your new README can be found in the dist folder.")
+        return writeToFile(data)
+    });
     ```
 - If you wish to edit the information that is used to generate the README that can be done by making edits or commenting out portions of:
   ```
