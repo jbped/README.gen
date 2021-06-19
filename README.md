@@ -19,7 +19,12 @@ README.gen is a command line argument README.md file generator. It's purpose is 
   - ```npm i```
 
 ## Usage
-Complete the installation steps. Once the installation steps have been completed initiate the command prompts by entering ```node index``` in an active command terminal. Follow the prompts that appear within the command line. If a question is required it will be be made apparent through the addition of "(Required)" at the end of the question. For questions that request a direct link provide a complete URL including "https://www." at the beginning of the URL. When questions request a GitHub account only provide the username (Example: jbped).
+Complete the installation steps. Once the installation steps have been completed initiate the command prompts by entering ```node index``` in an active command terminal. 
+
+Follow the prompts that appear within the command line. 
+- If a question is required it will be be made apparent through the addition of "(Required)" at the end of the question. 
+- For questions that request a direct link provide a complete URL including "https://www." at the beginning of the URL. 
+- When questions request a GitHub account only provide the username (Example: jbped).
 
 Once the prompts have been completed the README file will be generated and saved to the ./dist file. The file can now be retrieved and added to your project.
 
