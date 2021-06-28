@@ -237,7 +237,7 @@ const promptContributors = readMeData => {
     if(!readMeData.contributors) {
         readMeData.contributors = [];
     }
-    console.log("readMeData", readMeData);
+    // console.log("readMeData", readMeData);
     return inquirer.prompt ([
         {
             type:"input",
@@ -345,7 +345,7 @@ init()
     // If user selects to include Contributors in their Credits Section
     .then(data => {
         if (data.credits.includes("Contributors")) {
-            console.log("Contains contributors");
+            // console.log("Contains contributors");
             return promptContributors(data);
         } else {
             return data;
@@ -354,7 +354,7 @@ init()
     // If user selects to include Third-Party Assets in their Credits Section
     .then(data => {
         if (data.credits.includes("Third-Party Assets or Needed Attributions")) {
-            console.log("Contains Third-Party Assets or Attribution Requirements");
+            // console.log("Contains Third-Party Assets or Attribution Requirements");
             return promptThirdParty(data);
         } else {
             return data;
@@ -363,7 +363,7 @@ init()
     // If user selects to include Tutorials or Walkthroughs in their Credits Section
     .then (data => {
         if (data.credits.includes("Tutorials/Walkthroughs")) {
-            console.log("Contains Tutorials");
+            // console.log("Contains Tutorials");
             return promptTutorials(data);
         } else {
             return data;
@@ -378,7 +378,7 @@ init()
         return generateReadMe(data);
     })
     .then(data => {
-        console.log("Creating file... \n Your new README can be found in the dist folder.")
+        console.log("Creating file... \nYour new README can be found in the dist folder.")
         return writeToFile(data)
     });
 
