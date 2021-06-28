@@ -28,6 +28,8 @@ Follow the prompts that appear within the command line.
 
 Once the prompts have been completed the README file will be generated and saved to the ./dist file. The file can now be retrieved and added to your project.
 
+Here is a comprehensive walkthrough video for using [README.gen](https://drive.google.com/file/d/1v87BA0PhLjg1ig5itgvbShoGBrhf6vas/view?usp=sharing).
+
 ## Credits 
 ### Assets
 * [Node.js](https://nodejs.org/en/)
