@@ -26,7 +26,9 @@ Follow the prompts that appear within the command line.
 - For questions that request a direct link provide a complete URL including "https://www." at the beginning of the URL. 
 - When questions request a GitHub account only provide the username (Example: jbped).
 
-Once the prompts have been completed the README file will be generated and saved to the ./dist file. The file can now be retrieved and added to your project.
+Once the prompts have been completed the README file will be generated and saved to the ./dist file. The file can now be retrieved and added to your project. Note that any new READMEs generated will override previously generated READMEs. Be sure to copy and save them to another location before creating a new README. An example README can be found in the ./dist folder.
+
+Here is a comprehensive walkthrough video for using [README.gen](https://drive.google.com/file/d/1v87BA0PhLjg1ig5itgvbShoGBrhf6vas/view?usp=sharing).
 
 ## Credits 
 ### Assets
