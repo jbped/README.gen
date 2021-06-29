@@ -172,6 +172,7 @@ const reqQuestions = [
     }
 ];
 
+// An array of secondary questions
 const secQuestions = [
     {
         type:"confirm",
@@ -233,6 +234,7 @@ function init() {
         .prompt (reqQuestions, answers)
 };
 
+// Add contributors loop, creates array and pushes it to answers array after each iteration. Returns the updated array at the end. 
 const promptContributors = readMeData => {
     if(!readMeData.contributors) {
         readMeData.contributors = [];
@@ -264,6 +266,7 @@ const promptContributors = readMeData => {
     });
 };
 
+// Add Third-Pary Assets loop, creates array and pushes it to answers array after each iteration. Returns the updated array at the end.
 const promptThirdParty = readMeData => {
     if(!readMeData.thirdPartyAssets) {
         readMeData.thirdPartyAssets = [];
@@ -294,6 +297,7 @@ const promptThirdParty = readMeData => {
     });
 };
 
+// Add Tutorials loop, creates array and pushes it to answers array after each iteration. Returns the updated array at the end.
 const promptTutorials = readMeData => {
     if(!readMeData.tutorials) {
         readMeData.tutorials = [];
@@ -324,6 +328,7 @@ const promptTutorials = readMeData => {
     });
 };
 
+// Merges secondary answers with required answers.
 const promptSecondaryQuestions = readMeData => {
     return inquirer.prompt(secQuestions, answers)
         .then(secAnswers => {
@@ -335,6 +340,7 @@ const promptSecondaryQuestions = readMeData => {
         })
 }
 
+// Test function that can be used to test the generateReadMe function
 const testInit = testObj => {
      console.log(generateReadMe(testObj));
      writeToFile(generateReadMe(testObj));
