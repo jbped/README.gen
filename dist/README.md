@@ -8,15 +8,26 @@ Here is a very detailed explanation of the Test Project Name... It exists.
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
+* [Credits](#credits)
 * [Contributions](#contributions)
 * [Tests](#tests)
 
 ## Installation
-Well, there isn't much to install, but you can give installing something a shot.
+Well, there isn't much to install, but you can give installing something a shot
 
 ## Usage
 That may be tricky as there isn't much to use at this time.
 
+## Credits
+### Contributors
+* [Microsoft](https://github.com/microsoft)
+ 
+### Assets
+* [Node](https://nodejs.org/en/)
+ 
+### Tutorials
+* [Some Random Youtube Walkthrough](https://www.youtube.com/)
+        
 ## License
 
 MIT License
@@ -30,8 +41,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contributions
-Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/)
+Contributions to this project follow the Contributor Covenant [additional information can be found here](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
 
+## Tests
+Tests were made
+        
 ## Questions
 For any inquiries regarding Test Project Name, please contact Jake Pedigo:
 * GitHub: [jbped](https://github.com/jbped)
